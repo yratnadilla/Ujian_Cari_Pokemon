@@ -10,6 +10,7 @@ def home():
 @app.route('/search', methods = ['GET', 'POST'])
 def search():
     name = request.form['pokemonName']
+    name = name.lower()
     url = 'https://pokeapi.co/api/v2/pokemon/'
     checkName = requests.get(url)
     listPokemon = []
