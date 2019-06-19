@@ -11,7 +11,7 @@ def home():
 def search():
     name = request.form['pokemonName']
     name = name.lower()
-    url = 'https://pokeapi.co/api/v2/pokemon/'
+    url = 'https://pokeapi.co/api/v2/pokemon?limit=999'
     checkName = requests.get(url)
     listPokemon = []
     for i in range(len(checkName.json()['results'])):
